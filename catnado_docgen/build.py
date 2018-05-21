@@ -1,11 +1,11 @@
 """ Builds Python documentation in Markdown format for the given Python package
 and its descendants.
 """
-
-
+import copy
 import importlib
 import itertools
 import os
+
 import yaml
 
 from catnado_docgen import crawler, filewriter
@@ -47,7 +47,26 @@ def build_pages_config(mkdocs_config, packages, modules):
   ) if mkdocs_config else []
 
   doc_pages_config = _build_pages_config(packages, modules)
-  pages_config.append(doc_pages_config)
+
+  # mkdocs wants every page entry to be a list with a one-entry dict for some
+  # reason, so this converts our normal dictionary to a weird dictionary
+  def fix_entries_recursively(page_dict_entry):
+    new_list = []
+
+    if isinstance(page_dict_entry, list):
+      for entry in page_dict_entry:
+        new_list.append(fix_entries_recursively(entry))
+
+    elif isinstance(page_dict_entry, dict):
+      for key, value in page_dict_entry.items():
+        new_list.append({key: fix_entries_recursively(value)})
+
+    if new_list:
+      return sorted(new_list, key=lambda entry: entry.keys()[0])
+
+    return page_dict_entry
+
+  pages_config += fix_entries_recursively(doc_pages_config)
 
   return pages_config
 
@@ -60,31 +79,30 @@ def _build_pages_config(packages, modules):
   Returns:
     `list`; `pages` configuration that can be merged into a `mkdocs.yml` file
   """
-  pages_configuration = []
+  # package or module names => dict (package) or None (module)
+  package_dict = {}
 
-  for package in sorted(packages):
-    package_configuration = []
+  # set up initial structure in `package_dict`
+  for package in packages:
 
-    # Add an overview page for the package
-    package_configuration.append({
-      'Overview': os.path.join(DOCGEN_API, '{}.md'.format(package))
-    })
+    cv = package_dict
+    for package_part in package.split('.'):
+      # Add an overview page for each package as a default value
+      cv = cv.setdefault(package_part, {
+        '__init__': os.path.join(DOCGEN_API, '{}.md'.format(package))
+      })
 
-    # And one page per module in the package
-    for module in sorted(modules):
-      module_package = '.'.join(module.split('.')[:-1])  # cull past last period
-      if package == module_package:
-        package_configuration.append({
-          module.split('.')[-1]: os.path.join(DOCGEN_API, '{}.md'.format(module))
-        })
+  # add docs for one page per module in each package
+  for module in modules:
 
-    # Then add the package configuration to the page configuration
-    pages_configuration.append({
-      package: package_configuration
-    })
+    cv = package_dict
+    for module_part in module.split('.')[:-1]:
+      cv = cv[module_part]
+
+    cv[module.split('.')[-1]] = os.path.join(DOCGEN_API, '{}.md'.format(module))
 
   return {
-    DOCGEN_API: pages_configuration,
+    DOCGEN_API: package_dict,
   }
 
 

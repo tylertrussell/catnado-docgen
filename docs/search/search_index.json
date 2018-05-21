@@ -62,7 +62,7 @@
         }, 
         {
             "location": "/docgen-api/catnado_docgen.crawler/", 
-            "text": "Attributes\n\n\nFUNCTION\n\n\nCLASS\n\n\nMODULE\n\n\nFunctions\n\n\ncategorize_module_member\n\n\nDetermine what the category of the given \nmodule_item\n is.\n\n\nThis categorization will determine how documentation how docs are built\n  item\n  Categories include:\n    - class\n\n\nArgs:\n    module_item: an object out of a module's \n__dict__\n\n  Returns:\n    string classifier\n\n\nget_modules_and_packages_to_document\n\n\nGet a list of module and package names to document.\n\n\nArgs:\n    root_package: module object from \nimportlib.import_module\n\n  Returns:\n    tuple of package names (str), module names (str) beneath \nroot_package\n that\n    should be documented.\n\n\ncategorize_members\n\n\nGet a mapping of key -\n type for all items in the given module.\n\n\nDunder items (those whose names begin and end with \n__\n) are never documented.\n\n\nPrivate items (those whose names begin with \n_\n) can be included in\n  documentation by setting \ninclude_private=True\n.\n\n\nArgs:\n    module_class_or_func: module, class, or function whose members should be\n      categorized\n    include_private: optional bool, whether to include \"private\" variables (i.e.\n      those whose names start with a leading underscore).\n  Returns:\n    \ndict\n mapping 'types' to lists of keys from \n__dict__\n, i.e...\n    \n{\n      'class': ['TestClass', 'OtherClass'],\n      'function': ['test1', 'test2']\n    }\n\n\nClasses\n\n\ndefaultdict\n\n\ndefaultdict(default_factory[, ...]) --\n dict with default factory\n\n\nThe default factory is called without arguments to produce\na new value when a key is not present, in \ngetitem\n only.\nA defaultdict compares equal to a dict with the same items.\nAll remaining arguments are treated the same as if they were\npassed to the dict constructor, including keyword arguments.\n\n\nClass Functions\n\n\nmodule\n\n\nmodule(name[, doc])\n\n\nCreate a module object.\nThe name must be a string; the optional doc argument can have any type.\n\n\nClass Functions", 
+            "text": "Attributes\n\n\nFUNCTION\n\n\nCLASS\n\n\nMODULE\n\n\nFunctions\n\n\ncategorize_module_member\n\n\nDetermine what the category of the given \nmodule_item\n is.\n\n\nThis categorization will determine how documentation how docs are built\n  item\n  Categories include:\n    - class\n\n\nArgs:\n    module_item: an object out of a module's \n__dict__\n\n  Returns:\n    string classifier\n\n\nget_modules_and_packages_to_document\n\n\nGet a list of module and package names to document.\n\n\nArgs:\n    root_package: module object from \nimportlib.import_module\n\n  Returns:\n    tuple of package names (str), module names (str) beneath \nroot_package\n that\n    should be documented.\n\n\ncategorize_members\n\n\nGet a mapping of key -\n type for all items in the given module.\n\n\nDunder items (those whose names begin and end with \n__\n) are never documented.\n\n\nPrivate items (those whose names begin with \n_\n) can be included in\n  documentation by setting \ninclude_private=True\n.\n\n\nArgs:\n    module_class_or_func: module, class, or function whose members should be\n      categorized\n    include_private: optional bool, whether to include \"private\" variables (i.e.\n      those whose names start with a leading underscore).\n  Returns:\n    \ndict\n mapping 'types' to lists of keys from \n__dict__\n, i.e...\n    \n{\n      'class': ['TestClass', 'OtherClass'],\n      'function': ['test1', 'test2']\n    }", 
             "title": "crawler"
         }, 
         {
@@ -89,31 +89,6 @@
             "location": "/docgen-api/catnado_docgen.crawler/#categorize_members", 
             "text": "Get a mapping of key -  type for all items in the given module.  Dunder items (those whose names begin and end with  __ ) are never documented.  Private items (those whose names begin with  _ ) can be included in\n  documentation by setting  include_private=True .  Args:\n    module_class_or_func: module, class, or function whose members should be\n      categorized\n    include_private: optional bool, whether to include \"private\" variables (i.e.\n      those whose names start with a leading underscore).\n  Returns:\n     dict  mapping 'types' to lists of keys from  __dict__ , i.e...\n     {\n      'class': ['TestClass', 'OtherClass'],\n      'function': ['test1', 'test2']\n    }", 
             "title": "categorize_members"
-        }, 
-        {
-            "location": "/docgen-api/catnado_docgen.crawler/#classes", 
-            "text": "", 
-            "title": "Classes"
-        }, 
-        {
-            "location": "/docgen-api/catnado_docgen.crawler/#defaultdict", 
-            "text": "defaultdict(default_factory[, ...]) --  dict with default factory  The default factory is called without arguments to produce\na new value when a key is not present, in  getitem  only.\nA defaultdict compares equal to a dict with the same items.\nAll remaining arguments are treated the same as if they were\npassed to the dict constructor, including keyword arguments.", 
-            "title": "defaultdict"
-        }, 
-        {
-            "location": "/docgen-api/catnado_docgen.crawler/#class-functions", 
-            "text": "", 
-            "title": "Class Functions"
-        }, 
-        {
-            "location": "/docgen-api/catnado_docgen.crawler/#module", 
-            "text": "module(name[, doc])  Create a module object.\nThe name must be a string; the optional doc argument can have any type.", 
-            "title": "module"
-        }, 
-        {
-            "location": "/docgen-api/catnado_docgen.crawler/#class-functions_1", 
-            "text": "", 
-            "title": "Class Functions"
         }, 
         {
             "location": "/docgen-api/catnado_docgen.filewriter/", 
