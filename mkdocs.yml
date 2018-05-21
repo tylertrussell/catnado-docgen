@@ -1,0 +1,24 @@
+copyright: Copyright 2018 Tyler Trussell All Rights Reserved
+docs_dir: docs_src
+pages:
+- test:
+  - test child 1: testchild1.md
+  - test child 2: testchild2.md
+- docgen-api:
+  - catnado_docgen:
+    - Overview: docgen-api/catnado_docgen.md
+    - __main__: docgen-api/catnado_docgen.__main__.md
+    - build: docgen-api/catnado_docgen.build.md
+    - crawler: docgen-api/catnado_docgen.crawler.md
+    - filewriter: docgen-api/catnado_docgen.filewriter.md
+    - mkdocs_plugin: docgen-api/catnado_docgen.mkdocs_plugin.md
+plugins:
+- search
+- catnado_docgen
+repo_url: https://github.com/tylertrussell/catnado-docgen
+site_author: Tyler Trussell
+site_description: mkdocs plugin for auto-generating Python documentation
+site_dir: docs
+site_name: catnado-docgen
+site_url: https://tylertrussell.github.io/catnado-docgen
+theme: material
