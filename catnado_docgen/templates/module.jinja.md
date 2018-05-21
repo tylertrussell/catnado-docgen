@@ -32,13 +32,13 @@
 {{ class_data['docstring'] }}
 
         {% if class_data['functions'] > 0 %}
-#### Class Functions
-            
+        
             {% for func in class_data['functions'] %}
+
 `{{ func['name'] }}`
 
 {{ func['docstring'] }}
- 
+
             {% endfor %}
 
         {% endif %}
