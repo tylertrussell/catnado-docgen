@@ -1,0 +1,144 @@
+{
+    "docs": [
+        {
+            "location": "/docgen-api/catnado_docgen/", 
+            "text": "", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.__main__/", 
+            "text": "Attributes\n\n\nBUILD_OUTPUT_TARGET_HELP\n\n\nBUILD_PRINT_HELP\n\n\nBUILD_PAGES_HELP\n\n\nBUILD_IGNORE_HELP\n\n\nBUILD_PACKAGE_HELP\n\n\nFunctions\n\n\nmain\n\n\nSee \nmain\n.py for exhaustive list of arguments.\n\n\noutput_target\n is either a \nmkdocs.yml\n file or a directory in which to dump\n  the markdown files.\n\n\nIf a \nmkdocs.yml\n file is provided, \n--update-pages\n will\n  automatically update it with the newly-generated documentation.\n\n\nRaises:\n    ValueError: if specified output target is invalid or specified mkdocs.yml file\n      cannot be loaded.\n\n\nmain", 
+            "title": "__main__"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.__main__/#attributes", 
+            "text": "BUILD_OUTPUT_TARGET_HELP  BUILD_PRINT_HELP  BUILD_PAGES_HELP  BUILD_IGNORE_HELP  BUILD_PACKAGE_HELP", 
+            "title": "Attributes"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.__main__/#functions", 
+            "text": "", 
+            "title": "Functions"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.__main__/#main", 
+            "text": "See  main .py for exhaustive list of arguments.  output_target  is either a  mkdocs.yml  file or a directory in which to dump\n  the markdown files.  If a  mkdocs.yml  file is provided,  --update-pages  will\n  automatically update it with the newly-generated documentation.  Raises:\n    ValueError: if specified output target is invalid or specified mkdocs.yml file\n      cannot be loaded.", 
+            "title": "main"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.__main__/#main_1", 
+            "text": "", 
+            "title": "main"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.build/", 
+            "text": "Attributes\n\n\nFUNCTIONS\n\n\nPAGES\n\n\nERROR_OUTPUT_TARGET\n\n\nDOCSTRING\n\n\nERROR_PAGES_YML\n\n\nDEFAULT_DOCS_DIR\n\n\nCLASS\n\n\nFUNCTION\n\n\nDOCGEN_API\n\n\nMODULE\n\n\nERROR_IMPORT_FAILURE\n\n\nCLASSES\n\n\nVALUE\n\n\nMKDOCS_YML\n\n\nNAME\n\n\nATTRIBUTES\n\n\nDOCS_DIR\n\n\nFunctions\n\n\nmain\n\n\nSee \nmain\n.py for exhaustive list of arguments.\n\n\noutput_target\n is either a \nmkdocs.yml\n file or a directory in which to dump\n  the markdown files.\n\n\nIf a \nmkdocs.yml\n file is provided, \n--update-pages\n will\n  automatically update it with the newly-generated documentation.\n\n\nRaises:\n    ValueError: if specified output target is invalid or specified mkdocs.yml file\n      cannot be loaded.\n\n\nbuild_pages_config\n\n\nDelete any old documentation from an existing pages entry, if it exists,\n  and return a configuration containing the new documentation entries that can\n  be converted to YAML.\n\n\nArgs:\n    mkdocs_config: existing configuration from \nmkdocs.yml\n\n    packages: list of package names\n    modules: list of module names\n  Returns:\n    \nlist\n of pages (formatted as \ndict\ns)", 
+            "title": "build"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.build/#attributes", 
+            "text": "FUNCTIONS  PAGES  ERROR_OUTPUT_TARGET  DOCSTRING  ERROR_PAGES_YML  DEFAULT_DOCS_DIR  CLASS  FUNCTION  DOCGEN_API  MODULE  ERROR_IMPORT_FAILURE  CLASSES  VALUE  MKDOCS_YML  NAME  ATTRIBUTES  DOCS_DIR", 
+            "title": "Attributes"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.build/#functions", 
+            "text": "", 
+            "title": "Functions"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.build/#main", 
+            "text": "See  main .py for exhaustive list of arguments.  output_target  is either a  mkdocs.yml  file or a directory in which to dump\n  the markdown files.  If a  mkdocs.yml  file is provided,  --update-pages  will\n  automatically update it with the newly-generated documentation.  Raises:\n    ValueError: if specified output target is invalid or specified mkdocs.yml file\n      cannot be loaded.", 
+            "title": "main"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.build/#build_pages_config", 
+            "text": "Delete any old documentation from an existing pages entry, if it exists,\n  and return a configuration containing the new documentation entries that can\n  be converted to YAML.  Args:\n    mkdocs_config: existing configuration from  mkdocs.yml \n    packages: list of package names\n    modules: list of module names\n  Returns:\n     list  of pages (formatted as  dict s)", 
+            "title": "build_pages_config"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/", 
+            "text": "Attributes\n\n\nFUNCTION\n\n\nCLASS\n\n\nMODULE\n\n\nFunctions\n\n\ncategorize_module_member\n\n\nDetermine what the category of the given \nmodule_item\n is.\n\n\nThis categorization will determine how documentation how docs are built\n  item\n  Categories include:\n    - class\n\n\nArgs:\n    module_item: an object out of a module's \n__dict__\n\n  Returns:\n    string classifier\n\n\nget_modules_and_packages_to_document\n\n\nGet a list of module and package names to document.\n\n\nArgs:\n    root_package: module object from \nimportlib.import_module\n\n  Returns:\n    tuple of package names (str), module names (str) beneath \nroot_package\n that\n    should be documented.\n\n\ncategorize_members\n\n\nGet a mapping of key -\n type for all items in the given module.\n\n\nDunder items (those whose names begin and end with \n__\n) are never documented.\n\n\nPrivate items (those whose names begin with \n_\n) can be included in\n  documentation by setting \ninclude_private=True\n.\n\n\nArgs:\n    module_class_or_func: module, class, or function whose members should be\n      categorized\n    include_private: optional bool, whether to include \"private\" variables (i.e.\n      those whose names start with a leading underscore).\n  Returns:\n    \ndict\n mapping 'types' to lists of keys from \n__dict__\n, i.e...\n    \n{\n      'class': ['TestClass', 'OtherClass'],\n      'function': ['test1', 'test2']\n    }\n\n\nClasses\n\n\ndefaultdict\n\n\ndefaultdict(default_factory[, ...]) --\n dict with default factory\n\n\nThe default factory is called without arguments to produce\na new value when a key is not present, in \ngetitem\n only.\nA defaultdict compares equal to a dict with the same items.\nAll remaining arguments are treated the same as if they were\npassed to the dict constructor, including keyword arguments.\n\n\nClass Functions\n\n\nmodule\n\n\nmodule(name[, doc])\n\n\nCreate a module object.\nThe name must be a string; the optional doc argument can have any type.\n\n\nClass Functions", 
+            "title": "crawler"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#attributes", 
+            "text": "FUNCTION  CLASS  MODULE", 
+            "title": "Attributes"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#functions", 
+            "text": "", 
+            "title": "Functions"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#categorize_module_member", 
+            "text": "Determine what the category of the given  module_item  is.  This categorization will determine how documentation how docs are built\n  item\n  Categories include:\n    - class  Args:\n    module_item: an object out of a module's  __dict__ \n  Returns:\n    string classifier", 
+            "title": "categorize_module_member"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#get_modules_and_packages_to_document", 
+            "text": "Get a list of module and package names to document.  Args:\n    root_package: module object from  importlib.import_module \n  Returns:\n    tuple of package names (str), module names (str) beneath  root_package  that\n    should be documented.", 
+            "title": "get_modules_and_packages_to_document"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#categorize_members", 
+            "text": "Get a mapping of key -  type for all items in the given module.  Dunder items (those whose names begin and end with  __ ) are never documented.  Private items (those whose names begin with  _ ) can be included in\n  documentation by setting  include_private=True .  Args:\n    module_class_or_func: module, class, or function whose members should be\n      categorized\n    include_private: optional bool, whether to include \"private\" variables (i.e.\n      those whose names start with a leading underscore).\n  Returns:\n     dict  mapping 'types' to lists of keys from  __dict__ , i.e...\n     {\n      'class': ['TestClass', 'OtherClass'],\n      'function': ['test1', 'test2']\n    }", 
+            "title": "categorize_members"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#classes", 
+            "text": "", 
+            "title": "Classes"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#defaultdict", 
+            "text": "defaultdict(default_factory[, ...]) --  dict with default factory  The default factory is called without arguments to produce\na new value when a key is not present, in  getitem  only.\nA defaultdict compares equal to a dict with the same items.\nAll remaining arguments are treated the same as if they were\npassed to the dict constructor, including keyword arguments.", 
+            "title": "defaultdict"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#class-functions", 
+            "text": "", 
+            "title": "Class Functions"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#module", 
+            "text": "module(name[, doc])  Create a module object.\nThe name must be a string; the optional doc argument can have any type.", 
+            "title": "module"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.crawler/#class-functions_1", 
+            "text": "", 
+            "title": "Class Functions"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.filewriter/", 
+            "text": "Attributes\n\n\nenv_instance\n\n\nTEMPLATES_PATH\n\n\nFunctions\n\n\nget_jinja_environment\n\n\nGet the Jinja2 environment to use when rendering templates.\n\n\nOne copy of the environment is kept at the module-level using \nglobal\n.\n\n\nReturns:\n    jinja2.Environment\n\n\nrender_module_markdown\n\n\nRender a markdown file for the given module.\n\n\nArgs:\n    module: module object to render documentation for\n    target: str filename\n  Returns:\n    str containing rendered template", 
+            "title": "filewriter"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.filewriter/#attributes", 
+            "text": "env_instance  TEMPLATES_PATH", 
+            "title": "Attributes"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.filewriter/#functions", 
+            "text": "", 
+            "title": "Functions"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.filewriter/#get_jinja_environment", 
+            "text": "Get the Jinja2 environment to use when rendering templates.  One copy of the environment is kept at the module-level using  global .  Returns:\n    jinja2.Environment", 
+            "title": "get_jinja_environment"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.filewriter/#render_module_markdown", 
+            "text": "Render a markdown file for the given module.  Args:\n    module: module object to render documentation for\n    target: str filename\n  Returns:\n    str containing rendered template", 
+            "title": "render_module_markdown"
+        }, 
+        {
+            "location": "/docgen-api/catnado_docgen.mkdocs_plugin/", 
+            "text": "", 
+            "title": "mkdocs_plugin"
+        }
+    ]
+}

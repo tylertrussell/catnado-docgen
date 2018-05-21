@@ -1,9 +1,6 @@
 copyright: Copyright 2018 Tyler Trussell All Rights Reserved
 docs_dir: docs_src
 pages:
-- test:
-  - test child 1: testchild1.md
-  - test child 2: testchild2.md
 - docgen-api:
   - catnado_docgen:
     - Overview: docgen-api/catnado_docgen.md
@@ -14,7 +11,6 @@ pages:
     - mkdocs_plugin: docgen-api/catnado_docgen.mkdocs_plugin.md
 plugins:
 - search
-- catnado_docgen
 repo_url: https://github.com/tylertrussell/catnado-docgen
 site_author: Tyler Trussell
 site_description: mkdocs plugin for auto-generating Python documentation
