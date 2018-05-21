@@ -1,6 +1,11 @@
 {
     "docs": [
         {
+            "location": "/", 
+            "text": "", 
+            "title": "Home"
+        }, 
+        {
             "location": "/docgen-api/catnado_docgen/", 
             "text": "", 
             "title": "Overview"

@@ -1,6 +1,7 @@
 copyright: Copyright 2018 Tyler Trussell All Rights Reserved
 docs_dir: docs_src
 pages:
+- Home: index.md
 - docgen-api:
   - catnado_docgen:
     - Overview: docgen-api/catnado_docgen.md
