@@ -204,7 +204,8 @@ def _get_module_template_kwargs(module):
       value = getattr(module, name)
 
       if category == CLASS:
-        module_template_kwargs[CLASSES].append(_get_class_template_kwargs(value))
+        if value.__module__ == module:
+          module_template_kwargs[CLASSES].append(_get_class_template_kwargs(value))
 
       elif category == FUNCTION:
         module_template_kwargs[FUNCTIONS].append(_get_func_template_kwargs(value))
