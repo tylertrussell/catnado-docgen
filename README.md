@@ -7,6 +7,8 @@ but it would coul be useful for other projects, too.
 
 Install via `pip install catnado-docgen`.
 
+**This is a work in progress!**
+
 ## Instructions
 
 
@@ -32,42 +34,3 @@ If you want to do something else with the generated markdown documents, you can
 just specify an output directory like so:
 
 `docgen build packagename /my/path/here`
-
-
-#### Support for [Google-style](https://google.github.io/styleguide/pyguide.html#Comments) Python Docstrings
-
-Google docstrings display poorly in markdown.  Take this example:
-
-```
-Args:
-    test: optional boolean indicating this is a test
-Returns:
-    Random number
-Raises:
-    Assertion error if this function is called in production
-```
-
-It displays very poorly in Markdown, normally:
-
-Args:
-    test: optional boolean indicating this is a test
-    test2: optional boolean that is totally unused
-Returns:
-    Random number
-Raises:
-    Assertion error if this function is called in production
-
-But this library (which was originally written to document a Python library written
-specifically for Google App Engine) will format it nicely:
-
-#### Args
-
-`test`: optional boolean indicating this is a test
-
-`test`: optional boolean indicating this is a test
-
-#### Returns
-Random number
-
-#### Raises
-Assertion error if this function is called in production
