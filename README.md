@@ -3,7 +3,7 @@
 A Python documentation utility designed to work with `mkdocs`.
 
 Originally built for [`gae-catnado`](https://www.github.com/tylertrussell/gae-catnado),
-but it would coul be useful for other projects, too.
+but it could be useful for other projects, too.
 
 Install via `pip install catnado-docgen`.
 
