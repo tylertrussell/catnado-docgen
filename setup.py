@@ -15,20 +15,17 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
   name='catnado-docgen',
   version='0.0.1dev1',
-  description='A Python documentation utility and mkdocs plugin.',
+  description='A Python documentation utility.',
   long_description=long_description,
   url='http://github.com/tylertrussell/catnado-docgen',
   author='Tyler Trussell',
   author_email='tigertrussell+pip@gmail.com',
   license='Apache 2.0',
-  keywords='python documentation generation',
+  keywords='python documentation generation mkdocs',
   packages=['catnado_docgen'],
   entry_points={
     'console_scripts': [
       'docgen = catnado_docgen.__main__:main',
-    ],
-    'mkdocs.plugins': [
-      'catnado = catnado_docgen.autodoc:build',
     ],
   }
 )
