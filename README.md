@@ -12,20 +12,21 @@ Install via `pip install catnado-docgen`.
 ## Instructions
 
 
-#### Building Docs for a Python module
-Since this project is built to work in conjunction with `mkdocs`, the intended
-way to build documentation for a package would be to specify a `mkdocs.yml` file:
+#### In conjunction with `mkdocs.yaml`
 
-`docgen build packagename mkdocs.yml`
+To document a package in a project that has a `mkdocs.yaml` file, simply run:
+```
+docgen build packagename mkdocs.yml --update-pages
+```
 
-Doing so creates all documentation in the `mkdocs` source directory (specified 
-by the `docs_dir` key in `mkdocs.yml`) in a folder called `docgen-api`.
+This scans `packagename` recursively, extracting Python docstrings and building
+Markdown source files from them.
 
-At this point you could update the `pages` section of your `mkdocs.yml` file
-manually, but for large projects that could quickly become impractical.
+The new Markdown files are written to a folder called `docgen-api` in your 
+`docs_dir` (as specified in `mkdocs.yml`).
 
-If `--update-pages` is specified, the provided `mkdodcs.yml`'s `pages` section 
-is updated to contain a `docgen-api` section containing the created docs.
+The `--update-pages` option updates the `mkdocs.yml` `pages` entry to contain a 
+nested structure of packages and submodules under the heading `docgen-api`.
 
 
 #### Without `mkdocs.yml`
@@ -34,3 +35,5 @@ If you want to do something else with the generated markdown documents, you can
 just specify an output directory like so:
 
 `docgen build packagename /my/path/here`
+
+This will write the Markdown source to the specified directory.
