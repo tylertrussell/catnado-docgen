@@ -14,7 +14,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
   name='catnado-docgen',
-  version='0.0.1dev1',
+  version='0.0.1dev2',
   description='A Python documentation utility.',
   long_description=long_description,
   url='http://github.com/tylertrussell/catnado-docgen',
